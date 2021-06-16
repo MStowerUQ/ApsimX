@@ -206,7 +206,7 @@ namespace Models.CLEM.Resources
         /// Link to the current labour availability for this person
         /// </summary>
         [JsonIgnore]
-        public LabourSpecificationItem LabourAvailability { get; set; }
+        public ILabourSpecificationItem LabourAvailability { get; set; }
 
         /// <summary>
         /// A proportion (0-1) to limit available labour. This may be from financial shortfall for hired labour.

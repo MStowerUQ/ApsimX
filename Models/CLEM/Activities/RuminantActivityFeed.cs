@@ -134,7 +134,7 @@ namespace Models.CLEM.Activities
             feedToOverSatisfy = 0;
 
             // get list from filters
-            foreach (IFilterGroup child in Children.Where(a => a.GetType().ToString().Contains("RuminantFeedGroup")))
+            foreach (FilterGroup child in Children.OfType<RuminantFeedGroup>())
             {
                 var selectedIndividuals = herd.FilterRuminants(child);
 
@@ -236,7 +236,7 @@ namespace Models.CLEM.Activities
             List<Ruminant> herd = CurrentHerd(false);
             int head = 0;
             double adultEquivalents = 0;
-            foreach (IFilterGroup child in Children.Where(a => a.GetType().ToString().Contains("RuminantFeedGroup")))
+            foreach (FilterGroup child in Children.OfType<RuminantFeedGroup>())
             {
                 var subherd = herd.FilterRuminants(child).ToList();
                 head += subherd.Count();
@@ -387,7 +387,7 @@ namespace Models.CLEM.Activities
                 }
 
                 // get list from filters
-                foreach (IFilterGroup child in Children.Where(a => a.GetType().ToString().Contains("RuminantFeedGroup")))
+                foreach (FilterGroup child in Children.OfType<RuminantFeedGroup>())
                 {
                     double value = 0;
                     if (child is RuminantFeedGroup)

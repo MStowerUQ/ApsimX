@@ -23,7 +23,7 @@ namespace Models.CLEM.Groupings
     [Version(1, 0, 1, "")]
     [Version(1, 0, 2, "Purchase and sales identifier used")]
     [HelpUri(@"Content/Features/Filters/AnimalPriceGroup.htm")]
-    public class AnimalPriceGroup: CLEMModel, IFilterGroup
+    public class AnimalPriceGroup : FilterGroup
     {
         /// <summary>
         /// Style of pricing animals
@@ -45,18 +45,6 @@ namespace Models.CLEM.Groupings
         [Description("Purchase or sale price")]
         [System.ComponentModel.DefaultValueAttribute(PurchaseOrSalePricingStyleType.Both)]
         public PurchaseOrSalePricingStyleType PurchaseOrSale { get; set; }
-
-        /// <summary>
-        /// Combined ML ruleset for LINQ expression tree
-        /// </summary>
-        [JsonIgnore]
-        public object CombinedRules { get; set; } = null;
-
-        /// <summary>
-        /// Proportion of group to use
-        /// </summary>
-        [JsonIgnore]
-        public double Proportion { get; set; }
 
         /// <summary>
         /// Constructor
